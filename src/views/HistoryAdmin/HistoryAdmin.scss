@@ -11,19 +11,21 @@
         // background-color: #cdc3c373;
       }
       .btn-filter {
-        background-color: #07f4c4;
+        
         color: var(--light);
         padding: 8px 18px;
         border-radius: 8px;
       }
     }
   
+
+
     .search {
       background-color: #cdc3c373;
-      border-radius: 20px;
-      width: 283px;
+      border-radius: 10px;
+      width: 500px;
       margin-bottom: 18px;
-  
+    
       .inputSearch {
         padding: 7px 13px;
         background-color: transparent;
@@ -32,22 +34,23 @@
         border-bottom-left-radius: 20px;
         border-top-left-radius: 20px;
       }
-  
+    
       .iconSearch {
-        background-color: #07f4c4;
+        background-color: #2d99ae;
         color: var(--light);
         padding: 10px 23px;
-        border-radius: 20px;
+        border-radius: 0px 10px 10px 0px;
         &:hover {
           cursor: pointer;
         }
       }
     }
+
   
     .contentPage {
       padding: 0px 20px 20px 20px;
       border-radius: 10px;
-      background-color: #07f4c4;
+      background-color: transparent;
     }
   
     .timeOrder {

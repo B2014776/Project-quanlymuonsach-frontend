@@ -1,20 +1,13 @@
 <template>
   <div class="containPage" v-if="isLogin">
     <div class="titlePage d-flex">
-      <div class="groupSearch">
-        <input
-          class="inputSearch"
-          v-model="searchQuery"
-          type="search"
-          placeholder="Tìm kiếm tên sách"
-          aria-label="Search"
-        />
-        <span @click="searchBooks" class="iconSearch"
-          ><i class="fa-solid fa-magnifying-glass"></i
-        ></span>
+      <div class="groupSearch flex items-center">
+        <input class="inputSearch flex-grow" v-model="searchQuery" type="search" placeholder="Search..."
+          aria-label="Search" />
+        <span @click="searchBooks" class="iconSearch ml-2"><i class="fa-solid fa-magnifying-glass"></i></span>
       </div>
       <div class="ml-auto">
-        <button v-if="isLogin" @click="showModal" class="btnAdd">
+        <button v-if="isLogin" @click="showModal" class="w-[150px] h-[50px] rounded-[10px] bg-[#70c2b4] text-white">
           <i class="fa-solid fa-book-open"></i> Thêm sách
         </button>
         <router-link to="/admin/login" v-else>
@@ -23,6 +16,7 @@
           </button>
         </router-link>
       </div>
+      
     </div>
     <div class="contentPage">
       <div class="row" v-if="data.length > 0">
@@ -54,7 +48,7 @@
               </div>
               <div class="dataItem">
                 <span class="title">Nhà xuất bản:</span>
-                <span class="content"> {{ item.MaNxb.TenNxb }}</span>
+                <span class="content">{{ item.MaNxb != undefine  ? item.MaNxb.TenNxb : 'N/A' }}</span>
               </div>
             </div>
             <div class="actionItem">
@@ -320,7 +314,7 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, watch } from "vue";
 import axios from "axios";
 import { toast } from "vue3-toastify";
 const tenSach = ref("");
@@ -359,13 +353,13 @@ fetchDataNxb();
 
 const searchBooks = () => {
   if (searchQuery.value.trim() === "") {
-    toast.warn("Vui lòng nhập tên sách");
+    fetchData()
   } else {
     axios
       .get(`http://localhost:3000/book?tenSach=${searchQuery.value}`)
       .then((res) => {
         if (res.data.length > 0) {
-          console.log(res.data);
+          console.log("Data search", res.data);
           data.value = res.data;
         } else {
           data.value = [];
@@ -426,7 +420,7 @@ const handleOk = () => {
     formData.append("DonGia", donGia.value);
     formData.append("SoQuyen", soQuyen.value);
     formData.append("NamXuatBan", namXuatBan.value);
-    formData.append("idNxb", idNxb.value);
+    formData.append("MaNxb", idNxb.value);
     axios
       .post("http://localhost:3000/book", formData)
       .then((res) => {
@@ -452,8 +446,10 @@ const imageUpload = ref("../../public/imageIcon.jpg");
 
 const handleImage = (e) => {
   if (e.target.files && e.target.files[0]) {
+ 
     imageUpload.value = URL.createObjectURL(e.target.files[0]);
     image.value = e.target.files[0];
+    console.log(image.value)
   }
 };
 
@@ -466,7 +462,7 @@ const imageUpdate = ref();
 const showModalEdit = (item) => {
   isModalEdit.value = true;
   selectedItem.value = item;
-  imageUploadEdit.value = `http://localhost:3000/${item.HinhSach}`;
+  imageUploadEdit.value = `http://localhost:3000/upload/${item.HinhSach}`;
 };
 
 const handleImageUpdate = (e) => {
@@ -489,7 +485,7 @@ const handleOkEdit = () => {
   formData.append("DonGia", selectedItem.value.DonGia);
   formData.append("SoQuyen", selectedItem.value.SoQuyen);
   formData.append("NamXuatBan", selectedItem.value.NamXuatBan);
-  formData.append("idNxb", selectedItem.value.MaNxb._id);
+  formData.append("MaNxb", selectedItem.value.MaNxb._id);
   axios
     .put("http://localhost:3000/book/" + selectedItem.value._id, formData)
     .then((res) => {
@@ -533,6 +529,27 @@ const okButtonProps = {
     background: "red", // Đặt màu đỏ cho nút "OK"
   },
 };
+
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
+
+
+const debouncedSearchBooks = debounce(searchBooks, 300);
+
+// Watch searchQuery và gọi hàm debouncedSearchBooks
+watch(searchQuery, () => {
+  debouncedSearchBooks();
+});
 </script>
 
 <style lang="scss" scoped>

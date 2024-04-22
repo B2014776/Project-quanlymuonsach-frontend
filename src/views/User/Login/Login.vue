@@ -37,14 +37,20 @@
 
                       <a class="small text-muted text-center d-block" href="#!">Forgot Your Password?</a>
                       <div class="pt-1 mb-4 ">
-                        <button class="bg-[#2D99AE] w-full h-11 rounded-[11px] shadow-[20px]">SIGN IN</button>
+                        <button @click="userLogin" class="bg-[#2D99AE] w-full h-11 rounded-[11px] shadow-[20px]">SIGN IN</button>
                       </div>
 
                       <router-link to="/register">
                         <div>
-                          <button class="bg-[#0C5776] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">SIGN UP</button>
+                          <button  class="bg-[#0C5776] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">SIGN UP</button>
                         </div>
                       </router-link>
+
+                      
+                        <div class="pt-4 mb-4">
+                          <button  @click="adminLogin" class="pt-1 mb-4 bg-[#0C5776] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">ADMIN SIGN IN</button>
+                        </div>
+                      
 
                     </form>
 
@@ -87,36 +93,65 @@ const isLoggedIn = () => {
   }
 };
 isLoggedIn();
+const userLogin = () => {
+  const formData = {
+    phone: phone.value,
+    password: password.value,
+  };
+  axios.post("http://localhost:3000/authentication/login", formData)
+    .then(handleLoginResponse);
+};
 
-const login = () => {
+// Admin Login
+const adminLogin = () => {
   const formData = {
     phone: phone.value,
     password: password.value,
   };
   axios
-    .post("http://localhost:3000/authentication/login", formData)
-    .then((res) => {
-      if (res.data.error) {
-        toast.error(res.data.error);
-      } else {
-        const ID_DocGia = res.data.data._id;
-        const Ten = res.data.data.Ten;
-        const Address = res.data.data.DiaChi;
-        const NgaySinh = res.data.data.NgaySinh;
-        const DienThoai = res.data.data.DienThoai;
-        const Avatar = res.data.data.Avatar;
-        const isLogin = true;
-        localStorage.setItem("ID_DG", ID_DocGia);
-        localStorage.setItem("TenDG", Ten);
-        localStorage.setItem("AvatarDG", Avatar);
-        localStorage.setItem("DiaChiDG", Address);
-        localStorage.setItem("NgaySinhDG", NgaySinh);
-        localStorage.setItem("DienThoaiDG", DienThoai);
-        localStorage.setItem("isLoginDG", isLogin);
-        router.push("/");
-      }
-    });
+      .post("http://localhost:3000/authentication/login/staff", formData)
+      .then((res) => {
+        if (res.data.error) {
+          toast.error(res.data.error);
+        } else {
+          const ID_User = res.data.data._id;
+          const Username = res.data.data.HoTenNv;
+          const Avatar = res.data.data.Avatar;
+          const Position = res.data.data.ChucVu;
+          const Address = res.data.data.DiaChi;
+          const isLogin = true;
+          localStorage.setItem("ID_User", ID_User);
+          localStorage.setItem("Username", Username);
+          localStorage.setItem("Avatar", Avatar);
+          localStorage.setItem("Position", Position);
+          localStorage.setItem("Address", Address);
+          localStorage.setItem("isLogin", isLogin);
+          router.push("/admin/home");
+        }
+      });
 };
+
+const handleLoginResponse = (res) => {
+  if (res.data.error) {
+    toast.error(res.data.error);
+  } else {
+    const userData = res.data.data;
+    const { _id: ID_DocGia, Ten, DiaChi: Address, NgaySinh, DienThoai, Avatar } = userData;
+    
+    localStorage.setItem("ID_DG", ID_DocGia);
+    localStorage.setItem("TenDG", Ten);
+    localStorage.setItem("AvatarDG", Avatar);
+    localStorage.setItem("DiaChiDG", Address);
+    localStorage.setItem("NgaySinhDG", NgaySinh);
+    localStorage.setItem("DienThoaiDG", DienThoai);
+    localStorage.setItem("isLoginDG", true);
+    
+    router.push("/");
+   
+  }
+};
+
+
 </script>
 
 <style lang="scss" scoped>

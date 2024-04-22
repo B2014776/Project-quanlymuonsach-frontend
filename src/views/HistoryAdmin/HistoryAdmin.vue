@@ -2,7 +2,7 @@
   <div class="containPage" v-if="isLogin">
     <div class="d-flex justify-content-between align-items-center">
       <h2>Đơn mượn đã duyệt</h2>
-      <div class="groundFilter">
+      <!-- <div class="groundFilter">
         <select v-model="searchTrangThai" class="filter">
           <option value="">Trạng thái mượn</option>
           <option value="W">Chờ nhận</option>
@@ -11,10 +11,10 @@
           <option value="N">Chưa trả</option>
         </select>
         <button class="btn-filter" @click="searchDocGia">Lọc</button>
-      </div>
-      <div class="search">
+      </div> -->
+      <div class="search flex items-center">
         <input
-          class="inputSearch"
+          class="inputSearch flex-grow"
           v-model="searchQuery"
           type="search"
           placeholder="Tìm kiếm đọc giả"
@@ -33,7 +33,7 @@
         <div
           v-for="(rented, index) in dataRented"
           :key="rented._id"
-          class="list-group-item list-group-item-action mt-3 rounded"
+          class="list-group-item shadow list-group-item-action mt-3 rounded"
         >
           <div class="infoUser mb-2">
             <div class="d-flex justify-content-between align-items-center">

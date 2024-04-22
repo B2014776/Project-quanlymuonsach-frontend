@@ -32,11 +32,7 @@ const dataStaff = ref([]);
 const isLogin = localStorage.getItem("isLogin");
 
 const columns = [
-  {
-    title: "Id đọc giả",
-    dataIndex: "_id",
-    key: "_id",
-  },
+  
   {
     title: "Tên",
     dataIndex: "Ten",
@@ -65,11 +61,7 @@ const columns = [
 ];
 
 const columnsStaff = [
-  {
-    title: "Id user",
-    dataIndex: "_id",
-    key: "_id",
-  },
+  
   {
     title: "Họ tên",
     dataIndex: "HoTenNv",

@@ -48,7 +48,7 @@
         right: 2%;
         bottom: 4%;
         .btnAddToCart {
-          background: #ba9d35;
+          background: #2d99ae;
           padding: 5px 15px;
           border-radius: 20px;
           margin-bottom: 5px;
@@ -151,8 +151,8 @@
   
   .groupSearch {
     background-color: #cdc3c373;
-    border-radius: 20px;
-    width: 283px;
+    border-radius: 10px;
+    width: 500px;
     margin-bottom: 18px;
   
     .inputSearch {
@@ -165,10 +165,10 @@
     }
   
     .iconSearch {
-      background-color: var(--green);
+      background-color: #2d99ae;
       color: var(--light);
       padding: 10px 23px;
-      border-radius: 20px;
+      border-radius: 0px 10px 10px 0px;
       &:hover {
         cursor: pointer;
       }
