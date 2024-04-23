@@ -310,5 +310,5 @@ const okButtonAccess = {
 </script>
 
 <style lang="scss" scoped>
-@import "./HistoryAdmin.scss";
+@import "HistoryAdmin";
 </style>

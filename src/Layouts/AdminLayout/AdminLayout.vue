@@ -9,6 +9,6 @@
     </div>
   </template>
   <script setup>
-  import SideBarAdmin from "../../components/SideBarAdmin/SideBarAdmin.vue";
+
   import AppHeader from "../../components/AppHeader/AdminHeader.vue";
   </script>

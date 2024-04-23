@@ -14,7 +14,7 @@
                 </div>
               </div>
 
-              <!-- Order Details Column -->
+              <!-- Rent Details Column -->
               <div class="flex flex-col items-center">
                 <div class="text-white text-3xl font-bold mb-1">
                   {{ totalOrder }}
@@ -35,7 +35,7 @@
                 </div>
               </div>
 
-              <!-- Order Details Column -->
+              <!-- Rent Details Column -->
               <div class="flex flex-col items-center">
                 <div class="text-white text-3xl font-bold mb-1">
                   {{ totalDenied }}
@@ -56,7 +56,7 @@
                 </div>
               </div>
 
-              <!-- Order Details Column -->
+              <!-- Rent Details Column -->
               <div class="flex flex-col items-center">
                 <div class="text-white text-3xl font-bold mb-1">
                   {{ totalPending }}
@@ -77,7 +77,7 @@
                 </div>
               </div>
 
-              <!-- Order Details Column -->
+              <!-- Rent Details Column -->
               <div class="flex flex-col items-center">
                 <div class="text-white text-3xl font-bold mb-1">
                   {{ totalStaff }}
@@ -98,7 +98,7 @@
                 </div>
               </div>
 
-              <!-- Order Details Column -->
+              <!-- Rent Details Column -->
               <div class="flex flex-col items-center">
                 <div class="text-white text-3xl font-bold mb-1">
                   {{ totalCustomer }}
@@ -279,5 +279,5 @@ const okButtonAccess = {
 };
 </script>
 <style lang="scss" scoped>
-@import "./Admin.scss";
+@import "Admin";
 </style>

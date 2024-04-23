@@ -18,21 +18,21 @@
       <PopoverGroup class="hidden lg:flex lg:gap-x-12">
 
 
-        <a href="/admin/home" class="text-sm font-semibold leading-6 text-gray-900">Dashboard</a>
+        <a href="/admin/dashboard" class="text-sm font-semibold leading-6 text-gray-900">Dashboard</a>
 
 
 
-        <a href="/admin/about" class="text-sm font-semibold leading-6 text-gray-900">List Books</a>
-        <a href="/admin/history" class="text-sm font-semibold leading-6 text-gray-900">Approval</a>
-        <a href="/admin/customer" class="text-sm font-semibold leading-6 text-gray-900">Reader</a>
-        <a href="/admin/info" class="text-sm font-semibold leading-6 text-gray-900">Profile</a>
+        <a href="/admin/listbook" class="text-sm font-semibold leading-6 text-gray-900">List Books</a>
+        <a href="/admin/approval" class="text-sm font-semibold leading-6 text-gray-900">Approval</a>
+        <a href="/admin/reader" class="text-sm font-semibold leading-6 text-gray-900">Reader</a>
+        <a href="/admin/profile" class="text-sm font-semibold leading-6 text-gray-900">Profile</a>
       </PopoverGroup>
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
         <div class="infoUser">
           <!-- <div class="btnLogin">Login</div> -->
           <div v-if="isUserLoggedIn()" class="flex items-center space-x-2">
             <span class="text-sm font-semibold">{{ name }}</span>
-            <a href="/admin/info">
+            <a href="/admin/profile">
               <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage" />
             </a>
 
@@ -55,7 +55,7 @@
         <div class="flex items-center justify-between">
           <div v-if="isUserLoggedIn()" class="flex items-center space-x-2">
             
-            <a href="/admin/info">
+            <a href="/admin/profile">
               <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage" />
             </a>
             <span class="text-sm font-semibold">{{ name }}</span>
@@ -72,16 +72,16 @@
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
 
-              <a href="/admin/home"
+              <a href="/admin/dashboard"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Dashboard</a>
-              <a href="/admin/about"
+              <a href="/admin/listbook"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">List
                 Books</a>
-              <a href="/admin/history"
+              <a href="/admin/approval"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Approval</a>
-              <a href="/admin/customer"
+              <a href="/admin/reader"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Reader</a>
-              <a href="/admin/info"
+              <a href="/admin/profile"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Profile</a>
             </div>
 

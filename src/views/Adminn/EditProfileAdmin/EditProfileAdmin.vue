@@ -147,5 +147,5 @@ const handleSave = () => {
 };
 </script>
 <style lang="scss" scoped>
-@import "./EditProfileAdmin.scss";
+@import "EditProfileAdmin";
 </style>

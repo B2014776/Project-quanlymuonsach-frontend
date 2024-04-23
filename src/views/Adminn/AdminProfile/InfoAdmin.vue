@@ -92,5 +92,5 @@ const handleLogout = () => {
 };
 </script>
 <style lang="scss" scoped>
-@import "./InfoAdmin.scss";
+@import "InfoAdmin";
 </style>

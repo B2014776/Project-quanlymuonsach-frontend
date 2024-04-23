@@ -22,8 +22,8 @@
 
 
 
-        <a href="/about" class="text-sm font-bold leading-6 text-gray-900">Books</a>
-        <a href="/order" class="text-sm font-bold leading-6 text-gray-900">Rent</a>
+        <a href="/books" class="text-sm font-bold leading-6 text-gray-900">Books</a>
+        <a href="/rent" class="text-sm font-bold leading-6 text-gray-900">Rent</a>
         <a href="/profile" class="text-sm font-bold leading-6 text-gray-900">Profile</a>
       </PopoverGroup>
 
@@ -31,18 +31,18 @@
         <div class="infoUser">
           <!-- <div class="btnLogin">Login</div> -->
           <div v-if="isUserLoggedIn()" class="flex items-center space-x-2">
-            <span class="text-sm font-semibold">{{ name}}</span>
+            <span class="text-sm font-semibold">{{ name }}</span>
             <a href="/profile">
-              <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage"  />
+              <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage" />
             </a>
 
-          
+
 
           </div>
           <div v-else>
-            
-          <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-              aria-hidden="true">&rarr;</span></a>
+
+            <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                aria-hidden="true">&rarr;</span></a>
           </div>
 
         </div>
@@ -55,24 +55,24 @@
         class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
           <div class="infoUser">
-          <!-- <div class="btnLogin">Login</div> -->
-          <div v-if="isUserLoggedIn()" class="flex items-center space-x-2">
-            
-            <a href="/profile">
-              <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage"  />
-            </a>
-            <span class="text-sm font-semibold">{{ name}}</span>
+            <!-- <div class="btnLogin">Login</div> -->
+            <div v-if="isUserLoggedIn()" class="flex items-center space-x-2">
 
-          
+              <a href="/profile">
+                <img :src="avatar" class="w-10 h-10 rounded-full" alt="noImage" />
+              </a>
+              <span class="text-sm font-semibold">{{ name }}</span>
+
+
+
+            </div>
+            <div v-else>
+
+              <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+                  aria-hidden="true">&rarr;</span></a>
+            </div>
 
           </div>
-          <div v-else>
-            
-          <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
-              aria-hidden="true">&rarr;</span></a>
-          </div>
-
-        </div>
           <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="mobileMenuOpen = false">
             <span class="sr-only">Close menu</span>
             <XMarkIcon class="h-6 w-6" aria-hidden="true" />
@@ -84,14 +84,14 @@
 
               <a href="/"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-              <a href="/about"
+              <a href="/books"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Books</a>
-              <a href="/order"
+              <a href="/rent"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Rent</a>
               <a href="/profile"
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Profile</a>
             </div>
-            
+
           </div>
         </div>
       </DialogPanel>
@@ -148,7 +148,7 @@ const fetchData = () => {
 
       avatar.value = `http://localhost:3000/upload/${res.data.Avatar}`;
       console.log(`http://localhost:3000/upload/${res.data.Avatar}`);
-     
+
     })
     .catch((err) => console.log(err));
 };

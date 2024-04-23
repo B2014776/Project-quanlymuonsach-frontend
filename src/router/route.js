@@ -3,65 +3,46 @@ import { createWebHistory, createRouter } from "vue-router";
 // Layouts
 import AdminLayout from "../Layouts/AdminLayout/AdminLayout.vue";
 
-// router Admin
-import Admin from "@/views/Admin/Admin.vue";
-import LoginAdmin from "@/views/LoginAdmin/LoginAdmin.vue";
+// router DashBoard
+import Admin from "@/views/Adminn/DashBoard/Admin.vue";
+
 import AuthLayout from "@/Layouts/AuthLayout/AuthLayout.vue";
-import RegisterAdmin from "@/views/RegisterAdmin/RegisterAdmin.vue";
-import AboutAdmin from "@/views/AboutAdmin/AboutAdmin.vue";
-import InfoAdmin from "@/views/InfoAdmin/InfoAdmin.vue";
-import EditProfileAdmin from "@/views/EditProfileAdmin/EditProfileAdmin.vue";
-import Customer from "@/views/Customer/Customer.vue";
+
+import AboutAdmin from "@/views/Adminn/ListBook/AboutAdmin.vue";
+import InfoAdmin from "@/views/Adminn/AdminProfile/InfoAdmin.vue";
+import EditProfileAdmin from "@/views/Adminn/EditProfileAdmin/EditProfileAdmin.vue";
+import Customer from "@/views/Adminn/Reader/Customer.vue";
 import DefaultLayout from "@/Layouts/DefaultLayout/DefaultLayout.vue";
-import HistoryAdmin from "@/views/HistoryAdmin/HistoryAdmin.vue";
+import HistoryAdmin from "@/views/Adminn/Approval/HistoryAdmin.vue";
 
 // import user
-import About from "@/views/User/About/About.vue";
+import About from "@/views/User/ListBookUser/About.vue";
 import Home from "@/views/User/Home/Home.vue";
 import Login from "@/views/User/Login/Login.vue";
-import Register from "@/views/User/Register/Register.vue";
+import Register from "@/views/User/Signup/Register.vue";
 import Profile from "@/views/User/Profile/Profile.vue";
 import EditProfile from "@/views/User/EditProfile/EditProfile.vue";
-import Order from "@/views/User/Order/Order.vue";
+import Order from "@/views/User/Rent/Order.vue";
 const routes = [
-  // router Admin
+  // router DashBoard
+
+
   {
-    path: "/admin/home",
+    path: "/admin/dashboard",
     component: Admin,
     meta: {
       layout: AdminLayout,
     },
   },
   {
-    path: "/admin/login",
-    component: LoginAdmin,
-    meta: {
-      layout: AuthLayout,
-    },
-  },
-  {
-    path: "/admin/register",
-    component: RegisterAdmin,
-    meta: {
-      layout: AuthLayout,
-    },
-  },
-  {
-    path: "/admin/home",
-    component: Admin,
-    meta: {
-      layout: AdminLayout,
-    },
-  },
-  {
-    path: "/admin/about",
+    path: "/admin/listbook",
     component: AboutAdmin,
     meta: {
       layout: AdminLayout,
     },
   },
   {
-    path: "/admin/info",
+    path: "/admin/profile",
 
     component: InfoAdmin,
     meta: {
@@ -77,7 +58,7 @@ const routes = [
     },
   },
   {
-    path: "/admin/customer",
+    path: "/admin/reader",
 
     component: Customer,
     meta: {
@@ -85,7 +66,7 @@ const routes = [
     },
   },
   {
-    path: "/admin/history",
+    path: "/admin/approval",
     component: HistoryAdmin,
     meta: {
       layout: AdminLayout,
@@ -114,7 +95,7 @@ const routes = [
     },
   },
   {
-    path: "/about",
+    path: "/books",
     component: About,
     meta: {
       layout: DefaultLayout,
@@ -135,7 +116,7 @@ const routes = [
     },
   },
   {
-    path: "/order",
+    path: "/rent",
     component: Order,
     meta: {
       layout: DefaultLayout,

@@ -9,7 +9,6 @@
 </template>
 
 <script setup>
-  import SideBar from "../../components/SideBar/SideBar.vue";
   import AppHeader from "../../components/AppHeader/Header.vue";
 </script>
 

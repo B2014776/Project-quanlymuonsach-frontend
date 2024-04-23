@@ -107,5 +107,5 @@ fetchDataStaff();
 </script>
 
 <style lang="scss" scoped>
-@import "./Customer.scss";
+@import "Customer";
 </style>

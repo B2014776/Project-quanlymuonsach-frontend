@@ -553,5 +553,5 @@ watch(searchQuery, () => {
 </script>
 
 <style lang="scss" scoped>
-@import "./AboutAdmin.scss";
+@import "AboutAdmin";
 </style>

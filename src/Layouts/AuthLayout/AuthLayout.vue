@@ -9,6 +9,6 @@
     </div>
   </template>
   <script setup>
-  import AuthHeader from "../../components/AuthHeader/AuthHeader.vue";
+
   import AppHeader from "../../components/AppHeader/Header.vue";
   </script>

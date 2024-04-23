@@ -102,7 +102,7 @@ const userLogin = () => {
     .then(handleLoginResponse);
 };
 
-// Admin Login
+// DashBoard Login
 const adminLogin = () => {
   const formData = {
     phone: phone.value,
@@ -126,7 +126,7 @@ const adminLogin = () => {
           localStorage.setItem("Position", Position);
           localStorage.setItem("Address", Address);
           localStorage.setItem("isLogin", isLogin);
-          router.push("/admin/home");
+          router.push("/admin/dashboard");
         }
       });
 };
