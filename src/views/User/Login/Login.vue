@@ -42,13 +42,13 @@
 
                       <router-link to="/register">
                         <div>
-                          <button  class="bg-[#0C5776] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">SIGN UP</button>
+                          <button  class="bg-[#f179b8] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">SIGN UP</button>
                         </div>
                       </router-link>
 
                       
                         <div class="pt-4 mb-4">
-                          <button  @click="adminLogin" class="pt-1 mb-4 bg-[#0C5776] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">ADMIN SIGN IN</button>
+                          <button  @click="adminLogin" class="pt-1 mb-4 bg-[#70c2b4] w-full h-11 rounded-[11px] shadow-[20px] text-[#000]">ADMIN SIGN IN</button>
                         </div>
                       
 

@@ -98,8 +98,6 @@
   import { ref } from "vue";
   import { toast } from "vue3-toastify";
   import { useRouter } from "vue-router";
-  import { useUserStore } from "../../stores/userStore";
-  const userStore = useUserStore();
   const router = useRouter();
   const phone = ref("");
   const password = ref("");

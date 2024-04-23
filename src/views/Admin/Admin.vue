@@ -6,11 +6,11 @@
         <div class="row pl-3">
           <div class="col">
             <div
-              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg">
+              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-xl shadow-xl">
               <!-- Icon Column -->
               <div class="mb-4">
                 <div class="text-white text-4xl">
-                  <i class="fas fa-cart-shopping"></i>
+                  <i class="fas fa-book-open"></i>
                 </div>
               </div>
 
@@ -27,11 +27,11 @@
           </div>
           <div class="col">
             <div
-              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg">
+              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg shadow-xl">
               <!-- Icon Column -->
               <div class="mb-4">
                 <div class="text-white text-4xl">
-                  <i class="fas fa-cart-shopping"></i>
+                  <i class="fas fa-eraser"></i>
                 </div>
               </div>
 
@@ -48,11 +48,11 @@
           </div>
           <div class="col">
             <div
-              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg">
+              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg shadow-xl">
               <!-- Icon Column -->
               <div class="mb-4">
                 <div class="text-white text-4xl">
-                  <i class="fas fa-cart-shopping"></i>
+                  <i class="fas fa-hourglass-half"></i>
                 </div>
               </div>
 
@@ -69,11 +69,11 @@
           </div>
           <div class="col">
             <div
-              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg">
+              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg shadow-xl">
               <!-- Icon Column -->
               <div class="mb-4">
                 <div class="text-white text-4xl">
-                  <i class="fas fa-cart-shopping"></i>
+                  <i class="fas fa-people-group"></i>
                 </div>
               </div>
 
@@ -90,11 +90,11 @@
           </div>
           <div class="col">
             <div
-              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg">
+              class="w-36 h-48 rounded-lg bg-[#2D99AE] flex flex-col justify-center items-center transition duration-300 ease-in-out transform hover:bg-[#0C5776] hover:shadow-lg shadow-xl">
               <!-- Icon Column -->
               <div class="mb-4">
                 <div class="text-white text-4xl">
-                  <i class="fas fa-cart-shopping"></i>
+                  <i class="fas fa-book-open-reader"></i>
                 </div>
               </div>
 

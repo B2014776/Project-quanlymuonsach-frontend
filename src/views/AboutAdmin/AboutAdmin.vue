@@ -58,7 +58,7 @@
                 class="edit"
               >
                 <i class="fa-solid fa-pen"></i>
-                Sửa
+                Edit
               </button>
               <button
                 @click="showModalDelete(item)"
@@ -66,7 +66,7 @@
                 class="remove"
               >
                 <i class="fa-solid fa-trash iconRemove"></i>
-                Xóa
+                Delete
               </button>
             </div>
           </div>
@@ -193,7 +193,7 @@
         style="top: 40px"
         v-model:open="isModalEdit"
         width="800px"
-        title="Chỉnh sửa sách"
+        title=""
         @ok="handleOkEdit"
         @cancel="handleCancelEdit"
         okText="Cập nhật"

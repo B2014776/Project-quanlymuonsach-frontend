@@ -188,7 +188,7 @@ function thanhTien(ngayBatDau, ngayKetThuc, soLuong, giaPerQuyen) {
   var endDate = new Date(ngayKetThuc);
   var oneDay = 24 * 60 * 60 * 1000;
   var soNgay = Math.round(Math.abs((startDate - endDate) / oneDay) + 1);
-  var tongTien = (soLuong * giaPerQuyen) / 2;
+  var tongTien = (soLuong * giaPerQuyen * soNgay);
   if (isNaN(tongTien)) {
     return 0;
   }
